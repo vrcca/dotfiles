@@ -21,3 +21,9 @@ brew "grc"
 cask "flycut"
 cask "spotify"
 brew "asdf"
+# erlang dependencies
+brew "autoconf"
+brew "wxmac"
+brew "openssl"
+brew "fop"
+

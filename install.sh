@@ -63,6 +63,13 @@ asdf plugin-add erlang
 asdf plugin-add java
 asdf install java oracle-8.191
 asdf global java oracle-8.191
+fish -c "set -xU KERL_CONFIGURE_OPTIONS \"--disable-debug --without-javac\""
+echo "done."
+
+
+# MacOS default settings
+echo "Setting up MacOS defaults"
+defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME/"
 echo "done."
 
 echo "Please, restart terminal."
