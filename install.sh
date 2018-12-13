@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Absolute path this script is in, thus /home/user/bin
 EMACS_PATH=$HOME/.emacs.d
 FISHBIN_PATH="/usr/local/bin/fish"
@@ -22,6 +24,7 @@ fi
 
 echo "Setting up Fish..."
 if [[ $SHELL != $FISHBIN_PATH ]]; then
+    sudo -v
     echo "Changing default shell to $FISHBIN_PATH"
     sudo bash -c "cat /etc/shells | grep -Fxq $FISHBIN_PATH || echo $FISHBIN_PATH >> /etc/shells"
     chsh -s $FISHBIN_PATH
@@ -69,7 +72,25 @@ echo "done."
 
 # MacOS default settings
 echo "Setting up MacOS defaults"
-defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME/"
+# opens finder at home
+defaults write com.apple.finder NewWindowTargetPath -string "file:/$HOME/"
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+defaults write com.apple.finder QuitMenuItem -bool true
+# sets date format
+defaults write ~/Library/Preferences/com.apple.menuextra.clock.plist DateFormat -string "EEE d MMM HH:mm:ss"
+# Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -float 0.000000000001
+# Disables media keys (use Fn instead)
+defaults write NSGlobalDomain "com.apple.keyboard.fnState" -int 1
+# Enables three-finger drag
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -int 1
+#restarts everything
+killall SystemUIServer
+killall Finder
 echo "done."
 
 echo "Please, restart terminal."
