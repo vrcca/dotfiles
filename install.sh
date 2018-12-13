@@ -21,7 +21,6 @@ if [ ! -d $EMACS_PATH/.git ]; then
     echo "done."
 fi
 
-
 echo "Setting up Fish..."
 if [[ $SHELL != $FISHBIN_PATH ]]; then
     echo "Changing default shell to $FISHBIN_PATH"
@@ -39,6 +38,9 @@ if [[ ! -f $FISHER_PATH ]]; then
     curl https://git.io/fisher --create-dirs -sLo $FISHER_PATH
 fi
 fish -c fisher
+fish -c "set -U VISUAL emacs"
+fish -c "set -U EDITOR emacs"
+git config --global core.editor "emacs -nw"
 
 cp -vr fishshell/functions/* $FISHCONFIG_PATH/functions
 echo "done."
