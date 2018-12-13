@@ -12,7 +12,6 @@ echo "Installing dependencies..."
 brew bundle
 echo "done."
 
-
 # Emacs
 if [ ! -d $EMACS_PATH/.git ]; then
     echo "Setting up Emacs..."
@@ -29,6 +28,7 @@ if [[ $SHELL != $FISHBIN_PATH ]]; then
     echo "done."
 fi
 
+# Fish shell
 echo "Installing Fish dependencies..."
 mkdir -p $HOME/.config/fish/
 echo $BASEDIR
@@ -41,14 +41,19 @@ fish -c fisher
 cp -vr fishshell/functions/* $FISHCONFIG_PATH/functions
 echo "done."
 
+# Editors
 echo "Setting editors to emacs"
 fish -c "set -U VISUAL emacs"
 fish -c "set -U EDITOR emacs"
 git config --global core.editor "emacs -nw"
 echo "done."
 
+# Default directories
 echo "Creating directory structure"
 mkdir -p $HOME/Developer/vrcca
 echo "done."
+
+# iTerm2
+cp -v iterm2/com.googlecode.iterm2.plist $HOME/Library/Preferences
 
 echo "Please, restart terminal."
