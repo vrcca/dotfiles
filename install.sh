@@ -54,6 +54,6 @@ mkdir -p $HOME/Developer/vrcca
 echo "done."
 
 # iTerm2
-cp -v iterm2/com.googlecode.iterm2.plist $HOME/Library/Preferences
+cp -v iterm2_profile.plist $HOME/Library/Preferences/com.googlecode.iterm2.plist
 
 echo "Please, restart terminal."
