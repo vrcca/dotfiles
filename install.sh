@@ -73,7 +73,7 @@ echo "done."
 # MacOS default settings
 echo "Setting up MacOS defaults"
 # opens finder at home
-defaults write com.apple.finder NewWindowTargetPath -string "file:/$HOME/"
+defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME/"
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
 defaults write com.apple.finder QuitMenuItem -bool true
 # sets date format
@@ -84,10 +84,15 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -float 0.000000000001
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # Disables media keys (use Fn instead)
 defaults write NSGlobalDomain "com.apple.keyboard.fnState" -int 1
 # Enables three-finger drag
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -int 1
+# minimizes app to its own icon in dock
+defaults write com.apple.dock minimize-to-application -bool true
+# uses scale animation when minimizing app
+defaults write com.apple.dock mineffect
 #restarts everything
 killall SystemUIServer
 killall Finder
