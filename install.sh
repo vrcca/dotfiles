@@ -56,4 +56,13 @@ echo "done."
 # iTerm2
 cp -v iterm2_profile.plist $HOME/Library/Preferences/com.googlecode.iterm2.plist
 
+# ASDF plugins
+echo "Adding ASDF plugins..."
+asdf plugin-add elixir
+asdf plugin-add erlang
+asdf plugin-add java
+asdf install java oracle-8.191
+asdf global java oracle-8.191
+echo "done."
+
 echo "Please, restart terminal."
