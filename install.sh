@@ -38,11 +38,13 @@ if [[ ! -f $FISHER_PATH ]]; then
     curl https://git.io/fisher --create-dirs -sLo $FISHER_PATH
 fi
 fish -c fisher
+cp -vr fishshell/functions/* $FISHCONFIG_PATH/functions
+echo "done."
+
+echo "Setting editors to emacs"
 fish -c "set -U VISUAL emacs"
 fish -c "set -U EDITOR emacs"
 git config --global core.editor "emacs -nw"
-
-cp -vr fishshell/functions/* $FISHCONFIG_PATH/functions
 echo "done."
 
 echo "Creating directory structure"
