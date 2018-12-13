@@ -37,8 +37,8 @@ echo "Copied fishfile."
 if [[ ! -f $FISHER_PATH ]]; then
     curl https://git.io/fisher --create-dirs -sLo $FISHER_PATH
 fi
-fish -c fisher
 cp -vr fishshell/functions/* $FISHCONFIG_PATH/functions
+fish -c fisher
 echo "done."
 
 # Editors
