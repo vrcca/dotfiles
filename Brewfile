@@ -26,4 +26,7 @@ brew "autoconf"
 brew "wxmac"
 brew "openssl"
 brew "fop"
+# finish - erlang dependencies
+cask "visual-studio-code"
+brew "tree"
 
