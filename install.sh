@@ -93,6 +93,10 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -int 1
 defaults write com.apple.dock minimize-to-application -bool true
 # uses scale animation when minimizing app
 defaults write com.apple.dock mineffect
+# Bottom left screen corner → Start screen saver
+defaults write com.apple.dock wvous-bl-corner -int 5
+defaults write com.apple.dock wvous-bl-modifier -int 0
+
 #restarts everything
 killall SystemUIServer
 killall Finder
