@@ -100,9 +100,16 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Finder: Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
+# Sound: feedback on volume change
+defaults write NSGlobalDomain "com.apple.sound.beep.feedback" -bool true
+# Battery: displays percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+# Sets menu items in the menubar to be: Clock, Battery, AirPort, Displays, Bluetooth, then Volume.
+cp com.apple.systemuiserver.plist $HOME/Library/Preferences/com.apple.systemuiserver.plist 
+
 #restarts everything
 killall SystemUIServer
 killall Finder
 echo "done."
 
-echo "Please, restart terminal."
+echo "Please, restart computer."
