@@ -1,4 +1,3 @@
-# Defined in - @ line 0
-function e --description 'alias e=open -a Emacs'
+function e --description 'Opens file using Emacs'
 	open -a Emacs $argv;
 end
