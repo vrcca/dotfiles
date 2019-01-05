@@ -37,6 +37,7 @@ mkdir -p $HOME/.config/fish/
 echo $BASEDIR
 ln -Ffs `pwd`/fishshell/fishfile $HOME/.config/fish/fishfile
 echo "Copied fishfile."
+ln -Ffs `pwd`/fishshell/config.fish $HOME/.config/fish/config.fish
 if [[ ! -f $FISHER_PATH ]]; then
     curl https://git.io/fisher --create-dirs -sLo $FISHER_PATH
 fi
@@ -92,7 +93,7 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -int 1
 # minimizes app to its own icon in dock
 defaults write com.apple.dock minimize-to-application -bool true
 # uses scale animation when minimizing app
-defaults write com.apple.dock mineffect
+#defaults write com.apple.dock mineffect
 # Bottom left screen corner → Start screen saver
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0

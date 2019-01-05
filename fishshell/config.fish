@@ -1,2 +1,1 @@
-source $HOME/.asdf/asdf.fish
-source functions/git_custom_aliases.fish
+source /usr/local/opt/asdf/asdf.fish
