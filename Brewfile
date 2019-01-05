@@ -26,6 +26,7 @@ brew "tree"
 brew "httpie"
 cask "docker"
 cask "the-unarchiver"
+cask "keepingyouawake"
 
 # Apps
 cask "brave-browser"
