@@ -30,6 +30,7 @@ cask "keepingyouawake"
 
 # Apps
 cask "brave-browser"
+cask "firefox"
 cask "telegram"
 cask "slack"
 cask "evernote"
