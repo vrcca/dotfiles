@@ -27,6 +27,7 @@ brew "httpie"
 cask "docker"
 cask "the-unarchiver"
 cask "keepingyouawake"
+cask "dbeaver-community"
 
 # Apps
 cask "brave-browser"
