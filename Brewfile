@@ -4,7 +4,7 @@ tap "homebrew/cask-fonts"
 
 # tools
 brew "git"
-brew "emacs", args: ["with-cocoa", "with-gnutls"]
+cask "emacs"
 brew "ripgrep"
 cask "iterm2"
 brew "fish"
