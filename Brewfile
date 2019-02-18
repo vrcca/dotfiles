@@ -16,18 +16,21 @@ brew "terminal-notifier"
 cask "font-meslo-nerd-font-mono"
 brew "grc"
 brew "asdf"
+
 # erlang dependencies
 brew "autoconf"
 brew "wxmac"
 brew "openssl"
 brew "fop"
 # finish - erlang dependencies
+
 brew "tree"
 brew "httpie"
 cask "docker"
 cask "the-unarchiver"
 cask "keepingyouawake"
 cask "dbeaver-community"
+cask "postman"
 
 # Apps
 cask "brave-browser"
