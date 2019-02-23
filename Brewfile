@@ -17,13 +17,6 @@ cask "font-meslo-nerd-font-mono"
 brew "grc"
 brew "asdf"
 
-# erlang dependencies
-brew "autoconf"
-brew "wxmac"
-brew "openssl"
-brew "fop"
-# finish - erlang dependencies
-
 brew "tree"
 brew "httpie"
 cask "docker"
@@ -31,6 +24,16 @@ cask "the-unarchiver"
 cask "keepingyouawake"
 cask "dbeaver-community"
 cask "postman"
+
+# asdf nodejs dependencies
+brew "coreutils"
+brew "gnupg"
+
+# Erlang dependencies
+brew "autoconf"
+brew "wxmac"
+brew "openssl"
+brew "fop"
 
 # Apps
 cask "brave-browser"
