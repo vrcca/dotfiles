@@ -16,6 +16,7 @@ brew "terminal-notifier"
 cask "font-meslo-nerd-font-mono"
 brew "grc"
 brew "asdf"
+brew "glances" # better htop
 
 brew "tree"
 brew "httpie"
@@ -54,3 +55,4 @@ cask "signal"
 cask "mullvadvpn"
 cask "vlc"
 cask "notion"
+cask "dash"
