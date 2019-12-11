@@ -70,6 +70,9 @@ asdf global java oracle-8.191
 fish -c "set -xU KERL_CONFIGURE_OPTIONS \"--disable-debug --without-javac\""
 echo "done."
 
+# Git defaults
+git config --global core.excludesfile `pwd`/.gitignore
+
 
 # MacOS default settings
 echo "Setting up MacOS defaults"
