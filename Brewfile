@@ -2,11 +2,9 @@ cask_args appdir: "/Applications"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 
-# tools
+# terminal tools
 brew "git"
-cask "emacs"
 brew "ripgrep"
-cask "iterm2"
 brew "fish"
 brew "tldr"
 brew "bat"
@@ -18,9 +16,13 @@ brew "grc"
 brew "asdf"
 tap "cjbassi/gotop"
 brew "gotop" # better htop
-
+brew "watch"
 brew "tree"
 brew "httpie"
+
+# dev app tools
+cask "iterm2"
+cask "emacs"
 cask "docker"
 cask "the-unarchiver"
 cask "keepingyouawake"
