@@ -59,3 +59,5 @@ cask "mullvadvpn"
 cask "vlc"
 cask "notion"
 cask "dash"
+
+cask "balenaetcher"
