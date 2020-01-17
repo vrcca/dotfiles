@@ -19,6 +19,7 @@ brew "gotop" # better htop
 brew "watch"
 brew "tree"
 brew "httpie"
+brew "broot"
 
 # dev app tools
 cask "iterm2"
