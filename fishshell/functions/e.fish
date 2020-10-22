@@ -1,3 +1,3 @@
 function e --description 'Opens file using Emacs'
-	open -a Emacs $argv;
+    emacsclient -a 'emacs' -n "$argv" 2>/dev/null || command emacs
 end
