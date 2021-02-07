@@ -3,7 +3,8 @@
 # Absolute path this script is in, thus /home/user/bin
 EMACS_PATH=$HOME/.emacs.d
 FISHBIN_PATH="/usr/local/bin/fish"
-FISHCONFIG_PATH="$HOME/.config/fish"
+CONFIG_PATH="$HOME/.config"
+FISHCONFIG_PATH="$CONFIG_PATH/fish"
 FISHER_PATH="$FISHCONFIG_PATH/functions/fisher.fish"
 
 # Homebrew
@@ -15,12 +16,9 @@ brew bundle
 echo "done."
 
 # Emacs
-if [ ! -d $EMACS_PATH/.git ]; then
-    echo "Setting up Emacs..."
-    rm -rf $EMACS_PATH
-    git clone https://github.com/vrcca/emacs-configuration.git $EMACS_PATH
-    echo "done."
-fi
+cp -r config/doom $CONFIG_PATH/doom 
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+$EMACS_PATH/bin/doom install --no-config
 
 echo "Setting up Fish..."
 if [[ $SHELL != $FISHBIN_PATH ]]; then
@@ -35,14 +33,14 @@ fi
 echo "Installing Fish dependencies..."
 mkdir -p $HOME/.config/fish/
 echo $BASEDIR
-ln -Ffs `pwd`/fishshell/fishfile $HOME/.config/fish/fishfile
-echo "Copied fishfile."
+ln -Ffs `pwd`/fishshell/fish_plugins $HOME/.config/fish/fish_plugins
+echo "Copied fish_plugins."
 ln -Ffs `pwd`/fishshell/config.fish $HOME/.config/fish/config.fish
 if [[ ! -f $FISHER_PATH ]]; then
     curl https://git.io/fisher --create-dirs -sLo $FISHER_PATH
 fi
 cp -vr fishshell/functions/* $FISHCONFIG_PATH/functions
-fish -c fisher
+fish -c "fisher update"
 echo "done."
 
 # Editors
@@ -69,7 +67,7 @@ fish -c "set -xU KERL_CONFIGURE_OPTIONS \"--disable-debug --without-javac\""
 echo "done."
 
 # Git defaults
-cp `pwd`/.gitignore ~/.gitignore
+cp .gitignore $HOME/.gitignore
 
 # MacOS default settings
 echo "Setting up MacOS defaults"
