@@ -25,6 +25,8 @@ brew "broot"
 # dev app tools
 cask "iterm2"
 cask "emacs"
+tap "d12frosted/emacs-plus"
+brew "emacs-plus"
 cask "docker"
 cask "the-unarchiver"
 cask "keepingyouawake"
