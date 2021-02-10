@@ -17,10 +17,10 @@ echo "done."
 
 # Emacs
 mkdir -p $CONFIG_PATH/doom
-ln -s config/doom/config.el $CONFIG_PATH/doom/config.el
-ln -s config/doom/init.el $CONFIG_PATH/doom/init.el
-ln -s config/doom/packages.el $CONFIG_PATH/doom/packages.el
-ln -s config/doom/custom.el $CONFIG_PATH/doom/custom.el
+ln -s $HOME/.dotfiles/config/doom/config.el $CONFIG_PATH/doom/config.el
+ln -s $HOME/.dotfiles/config/doom/init.el $CONFIG_PATH/doom/init.el
+ln -s $HOME/.dotfiles/config/doom/packages.el $CONFIG_PATH/doom/packages.el
+ln -s $HOME/.dotfiles/config/doom/custom.el $CONFIG_PATH/doom/custom.el
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 $EMACS_PATH/bin/doom install --no-config
 
