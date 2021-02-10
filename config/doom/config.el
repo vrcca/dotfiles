@@ -54,7 +54,6 @@
 ;; they are implemented.
 (use-package! lsp-mode
     :commands lsp
-    :ensure t
     :diminish lsp-mode
     :hook
     (elixir-mode . lsp)
@@ -64,3 +63,9 @@
 (use-package! rubocop
   :hook
   (ruby-mode . rubocop-mode))
+
+(use-package! multiple-cursors
+  :config
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-*") 'mc/mark-all-like-this))
