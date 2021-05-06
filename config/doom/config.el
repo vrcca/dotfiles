@@ -73,3 +73,6 @@
 (use-package! neotree
   :config
   (global-set-key [f8] 'neotree-toggle))
+
+(use-package! jsonnet
+  :mode ("\\.jsonnet\\'" . jsonnet-mode))
