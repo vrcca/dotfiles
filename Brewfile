@@ -21,6 +21,7 @@ brew "watch"
 brew "tree"
 brew "httpie"
 brew "broot"
+brew "jsonnet"
 
 # dev app tools
 cask "iterm2"
