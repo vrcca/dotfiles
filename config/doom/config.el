@@ -76,3 +76,30 @@
 
 (use-package! jsonnet
   :mode ("\\.jsonnet\\'" . jsonnet-mode))
+
+(map! "s-k" 'kill-current-buffer)
+
+;; IRC setup START
+(setq auth-sources '("~/.authinfo.gpg"))
+
+(defun my-fetch-password (&rest params)
+  (require 'auth-source)
+  (let ((match (car (apply #'auth-source-search params))))
+    (if match
+        (let ((secret (plist-get match :secret)))
+          (if (functionp secret)
+              (funcall secret)
+            secret))
+      (error "Password not found for %S" params))))
+
+(defun my-nickserv-password (server)
+  (my-fetch-password :user "vrcca" :host "irc.libera.chat"))
+
+(after! circe
+  (set-irc-server! "irc.libera.chat"
+  '(:tls t
+    :port 6697
+    :nick "vrcca"
+    :nickserv-password my-nickserver-password
+    :channels (:after-auth "#elixir-lang"))))
+;; IRC setup END
