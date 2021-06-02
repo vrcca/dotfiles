@@ -78,6 +78,7 @@
   :mode ("\\.jsonnet\\'" . jsonnet-mode))
 
 (map! "s-k" 'kill-current-buffer)
+(map! "s-u" 'revert-buffer)
 
 ;; IRC setup START
 (setq auth-sources '("~/.authinfo.gpg"))
