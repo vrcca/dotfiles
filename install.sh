@@ -44,7 +44,7 @@ if [[ ! -f $FISHER_PATH ]]; then
     curl https://git.io/fisher --create-dirs -sLo $FISHER_PATH
 fi
 cp -vr fishshell/functions/* $FISHCONFIG_PATH/functions
-fish -c "fisher update"
+fish -c "fisher add < `pwd`/fishshell/fish_plugins"
 echo "done."
 
 # Editors
