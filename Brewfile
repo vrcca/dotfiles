@@ -28,14 +28,15 @@ brew 'broot'
 brew 'jsonnet'
 
 # dev app tools
-cask 'iterm2'
-tap 'd12frosted/emacs-plus'
-brew 'emacs-plus'
-cask 'docker'
-cask 'the-unarchiver'
-cask 'keepingyouawake'
-cask 'dbeaver-community'
-cask 'postman'
+cask "iterm2"
+tap "d12frosted/emacs-plus"
+brew "emacs-plus"
+brew "libyaml"
+cask "docker"
+cask "the-unarchiver"
+cask "keepingyouawake"
+cask "dbeaver-community"
+cask "postman"
 
 # asdf nodejs dependencies
 brew 'coreutils'
